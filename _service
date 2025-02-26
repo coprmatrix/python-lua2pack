@@ -9,13 +9,9 @@
     <service name="py_build"  mode="buildtime">
         <param name="source">lua2pack</param>
     </service>
-    <service name="extract_file" mode="buildtime">
-        <param name="archive">lua2pack-*.tar.gz</param>
-        <param name="file">lua2pack-*/PKG-INFO</param>
-    </service>
     <service name="py2pack_generate" mode="buildtime">
         <param name="name">lua2pack</param>
-        <param name="localfile">PKG-INFO</param>
+        <param name="localfile">lua2pack*.tar.gz</param>
     </service>
     <service name="perl_regex" mode="buildtime">
         <param name="file">*.spec</param>
