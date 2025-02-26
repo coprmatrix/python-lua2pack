@@ -15,6 +15,6 @@
     </service>
     <service name="perl_regex" mode="buildtime">
         <param name="file">*.spec</param>
-        <param name="regex">s/.*CHOOSE:.*//g;s/(%check)/\1\n%pytest/g;s/(BuildRequires:.*python-rpm-macros.*)/BuildRequires: %{python_module pytest}\n\1/g;</param> 
+        <param name="regex">s/.*CHOOSE:.*//g;s/(%check)/\1\n%pytest/g;s/(BuildRequires:.*python3-devel.*)/BuildRequires: python3-pytest\n\1/g;</param> 
     </service>
 </services>
