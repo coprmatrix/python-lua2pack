@@ -12,9 +12,17 @@
     <service name="py2pack_generate" mode="buildtime">
         <param name="name">lua2pack</param>
         <param name="localfile">lua2pack*.tar.gz</param>
+        <param name="source-url">https://files.pythonhosted.org/packages/source/l/lua2pack/lua2pack-%{version}.tar.gz</param>
     </service>
     <service name="perl_regex" mode="buildtime">
         <param name="file">*.spec</param>
-        <param name="regex">s/.*CHOOSE:.*//g;s/(%check)/\1\n%pytest/g;s/(BuildRequires:.*python3-devel.*)/BuildRequires: python3-pytest\n\1/g;</param> 
+        <param name="regex">s/.*CHOOSE:.*//g;s/(%check)/\1\n%pytest/g;s/(BuildRequires:.*python3-devel.*)/Requires:       luarocks\nBuildRequires:  python3-pytest\n\1/g;</param> 
     </service>
+
+
+    <service name="perl_regex" mode="buildtime">
+        <param name="file">*.spec</param>
+        <param name="regexfile">reg.pl</param>
+    </service>
+
 </services>
