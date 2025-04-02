@@ -1,7 +1,7 @@
 my $name = <<'EOF';
 %files -n %{python_name}
 %{python3_sitelib}/%{pypi_name}-%{version}.dist-info
-%ghost %{_bindir}/%{pypi_name}
+%{_bindir}/%{pypi_name}
 %{python3_sitelib}/%{pypi_name}/__init__.py
 %{python3_sitelib}/%{pypi_name}/__pycache__/*
 %{python3_sitelib}/%{pypi_name}/lua_runtime.py
